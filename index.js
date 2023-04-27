@@ -31,9 +31,9 @@ mongoose.connection.on("disconnected", () => {
 
 //middlewares
 
+app.use(cors({ origin: "https://bluwbery.onrender.com", credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin: "https://bluwbery.onrender.com", credentials: true }));
 
 app.use("/api/auth", authRoute);
 app.use("/api/categories", categoriesRoute);
