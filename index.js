@@ -33,7 +33,7 @@ mongoose.connection.on("disconnected", () => {
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin: "https://bluwberry.netlify.app", credentials: true }));
+app.use(cors({ origin: "https://bluwbery.onrender.com", credentials: true }));
 
 app.use("/api/auth", authRoute);
 app.use("/api/categories", categoriesRoute);
