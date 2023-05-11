@@ -52,7 +52,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(process.env.PORT || 2023, () => {
+app.listen(process.env.PORTS || 5050, () => {
   connect();
   console.log("Connected to Backend!");
 });
