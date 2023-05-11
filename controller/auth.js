@@ -43,8 +43,6 @@ export const login = async (req, res, next) => {
     res
       .cookie("access_token", token, {
         httpOnly: true, // backend only
-        secure: true, // only transfer over https
-        sameSite: "none",
       })
       .status(200)
       .send({ ...otherDetails, isAdmin });
