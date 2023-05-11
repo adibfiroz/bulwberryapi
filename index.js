@@ -12,7 +12,7 @@ import cors from "cors";
 const app = express();
 dotenv.config();
 
-mongoose.set("strictQuery", true);
+//mongoose.set("strictQuery", true);
 
 const connect = () => {
   mongoose
