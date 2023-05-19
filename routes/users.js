@@ -33,7 +33,7 @@ router.put("/remove/:id", verifyUser, removeSoftware);
 
 router.get("/find/:id", getUser);
 
-router.get("/", verifyAdmin, getAllUsers);
+router.get("/", getAllUsers);
 
 router.get("/reviews/:id", getAllreview);
 
