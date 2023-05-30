@@ -3,18 +3,18 @@ import Software from "../models/Software.js";
 import { createError } from "../utils/error.js";
 
 export const addReview = async (req, res, next) => {
-  const newReview = new Reviews({ ...req.body, userId: req.user.id });
+  const newReview = new Reviews({ ...req.body });
 
   try {
-    const review = await Reviews.findOne({
-      softId: req.body.softId,
-      userId: req.user.id,
-    });
+    // const review = await Reviews.findOne({
+    //   softId: req.body.softId,
+    //   userId: req.user.id,
+    // });
 
-    if (review)
-      return next(
-        createError(403, "You have already created review for this Software!")
-      );
+    // if (review)
+    //   return next(
+    //     createError(403, "You have already created review for this Software!")
+    //   );
 
     const saveReview = await newReview.save();
 

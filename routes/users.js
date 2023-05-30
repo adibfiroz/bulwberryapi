@@ -23,7 +23,7 @@ const router = express.Router();
 //   res.send("hello admin, you are logged in and you can delete all account");
 // });
 
-router.put("/:id", verifyUser, updateUser);
+router.put("/:id", updateUser);
 
 router.delete("/:id", verifyUser, deleteUser);
 

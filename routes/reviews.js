@@ -9,7 +9,7 @@ import { verifyUser } from "../utils/verifyToken.js";
 
 const router = express.Router();
 
-router.post("/", verifyUser, addReview);
+router.post("/", addReview);
 
 router.get("/:softId", getReview);
 
