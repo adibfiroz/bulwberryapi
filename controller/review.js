@@ -4,7 +4,7 @@ import { createError } from "../utils/error.js";
 
 export const addReview = async (req, res, next) => {
   const newReview = new Reviews({ ...req.body });
-
+  //userId: req.user.id
   try {
     // const review = await Reviews.findOne({
     //   softId: req.body.softId,
