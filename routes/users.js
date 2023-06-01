@@ -27,9 +27,9 @@ router.put("/:id", updateUser);
 
 router.delete("/:id", verifyUser, deleteUser);
 
-router.put("/save/:id", verifyUser, saveSoftware);
+router.put("/save/:id", saveSoftware);
 
-router.put("/remove/:id", verifyUser, removeSoftware);
+router.put("/remove/:id", removeSoftware);
 
 router.get("/find/:id", getUser);
 

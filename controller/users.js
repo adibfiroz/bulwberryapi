@@ -53,7 +53,7 @@ export const getAllUsers = async (req, res, next) => {
 export const saveSoftware = async (req, res, next) => {
   try {
     await Software.findByIdAndUpdate(req.params.id);
-    await Users.findByIdAndUpdate(req.user.id, {
+    await Users.findByIdAndUpdate(req.body.userId, {
       $push: { savedSoftwares: req.params.id },
     });
     res.status(200).json("Saved successfully");
@@ -65,7 +65,7 @@ export const saveSoftware = async (req, res, next) => {
 export const removeSoftware = async (req, res, next) => {
   try {
     await Software.findByIdAndUpdate(req.params.id);
-    await Users.findByIdAndUpdate(req.user.id, {
+    await Users.findByIdAndUpdate(req.body.userId, {
       $pull: { savedSoftwares: req.params.id },
     });
     res.status(200).json("Removed successfully");
