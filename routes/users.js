@@ -5,8 +5,10 @@ import {
   getAllSoftwares,
   getAllUsers,
   getUser,
+  likeReview,
   removeSoftware,
   saveSoftware,
+  unlikeReview,
   updateUser,
 } from "../controller/users.js";
 import { verifyAdmin, verifyUser } from "../utils/verifyToken.js";
@@ -30,6 +32,10 @@ router.delete("/:id", verifyUser, deleteUser);
 router.put("/save/:id", saveSoftware);
 
 router.put("/remove/:id", removeSoftware);
+
+router.put("/like/:id", likeReview);
+
+router.put("/unlike/:id", unlikeReview);
 
 router.get("/find/:id", getUser);
 

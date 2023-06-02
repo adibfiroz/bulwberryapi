@@ -74,6 +74,30 @@ export const removeSoftware = async (req, res, next) => {
   }
 };
 
+export const likeReview = async (req, res, next) => {
+  try {
+    await Users.findByIdAndUpdate(req.body.userId);
+    await Reviews.findByIdAndUpdate(req.params.id, {
+      $push: { likes: req.body.userId },
+    });
+    res.status(200).json("liked!");
+  } catch (err) {
+    next(err);
+  }
+};
+
+export const unlikeReview = async (req, res, next) => {
+  try {
+    await Users.findByIdAndUpdate(req.body.userId);
+    await Reviews.findByIdAndUpdate(req.params.id, {
+      $pull: { likes: req.body.userId },
+    });
+    res.status(200).json("unliked!");
+  } catch (err) {
+    next(err);
+  }
+};
+
 export const getAllreview = async (req, res, next) => {
   const userId = req.params.id;
   try {
