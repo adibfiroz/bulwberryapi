@@ -30,7 +30,9 @@ export const addReview = async (req, res, next) => {
 
 export const getReview = async (req, res, next) => {
   try {
-    const reviews = await Reviews.find({ softId: req.params.softId });
+    const reviews = await Reviews.find({ softId: req.params.softId }).sort({
+      createdAt: -1,
+    });
     res.status(200).send(reviews);
   } catch (err) {
     next(err);
